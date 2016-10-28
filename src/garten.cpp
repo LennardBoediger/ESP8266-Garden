@@ -111,9 +111,9 @@ int handleDuration(String dtmp) {
 }
 
 void handleRoot() {
-  String message = "<html><head><title>Garten</title><style> ";
-  message += "input[type=\"submit\"] { color: rgb(255, 255, 255); cursor: pointer; display: block; height: 36px; min-height: auto; min-width: 104px; text-overflow: ellipsis; vertical-align: middle; white-space: nowrap; width: 120px; will-change: margin, width, background-color, color; word-break: break-word; column-rule-color: rgb(255, 255, 255); perspective-origin: 60px 18px; transform-origin: 60px 18px; background: rgb(38, 142, 223) none repeat scroll 0% 0% / auto padding-box border-box; border: 0px none rgb(255, 255, 255); font: normal normal normal normal 16px / normal \"Source Sans Pro\", Arial, sans-serif; margin: 9.6px 4.8px; outline: rgb(255, 255, 255) none 0px; overflow: hidden; padding: 0px 16px; transition: margin 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) 0s, width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) 0s, background-color 0.1s ease 0s, color 0.1s ease 0s; }";
-  message += "input[type=\"text\"] { height: 24px; vertical-align: middle; width: 228px; word-break: break-word; perspective-origin: 114px 12px; transform-origin: 114px 12px; font: normal normal normal normal 16px / normal \"Source Sans Pro\", Arial, sans-serif; margin: 1px 0px;padding: 0px; }";
+  String message = "<html><head><meta charset=\"UTF-8\"><title>ESP8266-Garden</title><link rel\"stylesheet\" href=\"css/bootstrap.min.css\"><link rel\"stylesheet\" href=\"style.css\"><style> ";
+  //message += "input[type=\"submit\"] { color: rgb(255, 255, 255); cursor: pointer; display: block; height: 36px; min-height: auto; min-width: 104px; text-overflow: ellipsis; vertical-align: middle; white-space: nowrap; width: 120px; will-change: margin, width, background-color, color; word-break: break-word; column-rule-color: rgb(255, 255, 255); perspective-origin: 60px 18px; transform-origin: 60px 18px; background: rgb(38, 142, 223) none repeat scroll 0% 0% / auto padding-box border-box; border: 0px none rgb(255, 255, 255); font: normal normal normal normal 16px / normal \"Source Sans Pro\", Arial, sans-serif; margin: 9.6px 4.8px; outline: rgb(255, 255, 255) none 0px; overflow: hidden; padding: 0px 16px; transition: margin 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) 0s, width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) 0s, background-color 0.1s ease 0s, color 0.1s ease 0s; }";
+  //message += "input[type=\"text\"] { height: 24px; vertical-align: middle; width: 228px; word-break: break-word; perspective-origin: 114px 12px; transform-origin: 114px 12px; font: normal normal normal normal 16px / normal \"Source Sans Pro\", Arial, sans-serif; margin: 1px 0px;padding: 0px; }";
   message += "text { box-sizing: border-box; color: rgb(63, 70, 76); display: inline-block; height: 20px; text-align: left; vertical-align: middle; width: 142.375px; word-break: break-word; column-rule-color: rgb(63, 70, 76); perspective-origin: 71.1875px 10px; transform-origin: 71.1875px 10px; border: 0px none rgb(63, 70, 76); font: normal normal normal normal 16px / 20px \"Source Sans Pro\", Arial, sans-serif; margin: 1px 6px 1px 4px; outline: rgb(63, 70, 76) none 0px; }";
   message += " </style></head><body>";
   message += "<form action='/' method='POST'>";
@@ -183,7 +183,7 @@ void handleRoot() {
 
   message += errmsg;
 
-  message += "<br/><input type='submit' value='senden'></form>";
+  message += "<br/><input type='submit' class= 'btn btn-primary' value='senden'></form>";
   message += "</body></html>";
 
   server.send(200, "text/html", message);
