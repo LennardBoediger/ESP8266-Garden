@@ -7,9 +7,12 @@
 #include <NtpClientLib.h>
 #include <Wifi.h>
 
-#define ROM_START_H   0   //hardcoded ROM address definiton
+//hardcoding ROM address definition
+#define ROM_START_H   0
 #define ROM_START_MIN 1
 #define ROM_DURATION 2
+
+//GPIO
 #define WATER_RELAI 12
 #define WATER_TANK_SENSOR 13
 #define WATER_TANK_LED 14
@@ -21,17 +24,17 @@ invalid_character,
 invalid_sum
 };
 
-//to do: struct uint 8
+//TODO: struct uint 8
 //setting variables
 uint8_t start_h;
 uint8_t start_min;
 uint8_t duration;
 
 //service variables
-uint8_t watering_flag=0;
+uint8_t watering_flag = 0;
 uint8_t water_tank_empty;
 unsigned long previousMillis = 0;
-unsigned long currentMillis;//to do remove ??
+unsigned long currentMillis;
 
 void handelWaterTank() {
 	water_tank_empty = !(digitalRead(WATER_TANK_SENSOR));
@@ -248,7 +251,7 @@ void setup(void){
   server.begin();
   Serial.println("HTTP server started");
 
-  //NTP  setup
+  // NTP setup
   NTP.onNTPSyncEvent([](NTPSyncEvent_t ntpEvent) {
 		if (ntpEvent) {
 			Serial.print("Time Sync error: ");
